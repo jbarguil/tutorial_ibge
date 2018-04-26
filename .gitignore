@@ -1,2 +1,4 @@
 dados/
 *.Rdata
+
+.DS_Store
