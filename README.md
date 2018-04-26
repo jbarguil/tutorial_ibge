@@ -26,12 +26,35 @@ todo o acervo espacial de setores (Shapefile), converter tudo que puder para o R
 
 Isso é feito através de queries no banco de dados (Joins) e filtragem das colunas e predicados desejados.
 
-## Download dos dados
+## Preparação
+
+### Download dos dados
 
 Os dados estão disponíveis para download nos servidores de FTP do IBGE.
 
-Microdados: ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_Gerais_da_Amostra/Microdados/
+Microdados:
+`ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_Gerais_da_Amostra/Microdados/`
 
-Setores (áreas de ponderação): ftp://geoftp.ibge.gov.br/recortes_para_fins_estatisticos/malha_de_areas_de_ponderacao/censo_demografico_2010/
+Setores (áreas de ponderação):
+`ftp://geoftp.ibge.gov.br/recortes_para_fins_estatisticos/malha_de_areas_de_ponderacao/censo_demografico_2010/`
+
+Para este tutorial:
+
+  - Faça download do arquivo `SP2-RM.zip`, referente à região metropolitana de São Paulo.
+  - Descompacte-o e salve na pasta `dados/`.
+
+**Obs:** as "colunas" dos dados são codificadas, ex: `V0001`, `V0002`. O arquivo `dados/Layout_microdados_Amostra.xls` contém as informações sobre o que representa cada uma delas.
+
+### Ferramentas
+
+  - Instale e configure o Postgres.
+    - Crie um novo banco de dados para os dados do IBGE (recomendado).
+  - Instale e configure o R.
 
 
+## Analisando os dados
+
+Os arquivos correspondentes a cada etapa estão numerados de acordo.
+
+  - **Passo 1**: Carregamento dos dados do IBGE no R e exportação para um arquivo `.Rdata`.
+  - **Passo 2**: Importação dos dados no Postgres.
